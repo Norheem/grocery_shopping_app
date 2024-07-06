@@ -8,7 +8,7 @@ import 'package:tumbi_shopping_app/models/cart_model.dart';
 import 'package:tumbi_shopping_app/screen/products.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key});
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -24,12 +24,23 @@ class _HomeState extends State<Home> {
   final String imageUrl = 'https://api.timbu.cloud/images/';
 
   bool isLoading = true;
+  List filteredProducts = [];
 
   @override
   void initState() {
     super.initState();
     fetchProducts();
     _loadCartItems();
+
+    // Add a listener to the search field
+    searchController.addListener(_onSearchChanged);
+  }
+
+  @override
+  void dispose() {
+    searchController.removeListener(_onSearchChanged);
+    searchController.dispose();
+    super.dispose();
   }
 
   Future<void> fetchProducts() async {
@@ -39,6 +50,7 @@ class _HomeState extends State<Home> {
         final data = json.decode(response.body);
         setState(() {
           products = data['items'] ?? [];
+          filteredProducts = products;
           products.shuffle();
           isLoading = false;
         });
@@ -59,6 +71,16 @@ class _HomeState extends State<Home> {
         isLoading = false;
       });
     }
+  }
+
+  void _onSearchChanged() {
+    setState(() {
+      filteredProducts = products
+          .where((product) => product['name']
+              .toLowerCase()
+              .contains(searchController.text.toLowerCase()))
+          .toList();
+    });
   }
 
   // Load cart items from SharedPreferences
@@ -154,7 +176,7 @@ class _HomeState extends State<Home> {
                         child: Padding(
                           padding: const EdgeInsets.all(10),
                           child: Column(
-                            children: products.map((product) {
+                            children: filteredProducts.map((product) {
                               final image =
                                   imageUrl + product['photos'][0]['url'];
                               final name = product['name'];

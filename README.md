@@ -20,7 +20,7 @@ samples, guidance on mobile development, and a full API reference.
 
 [You can check the app here by clicking on the link provided here] (https://appetize.io/app/b_kjoml33hqcbxmuhg3crjepkyiu)
 
-[Proovided is the link to download the apk file of the app] (https://www.mediafire.com/file/l0xhxqf2wxplv9h/app-debug.apk/file)
+[Provided is the link to download the APK file of the app] (https://www.mediafire.com/file/l0xhxqf2wxplv9h/app-debug.apk/file)
 
 ![2024-07-07 02-49-15 High Res Screenshot](https://github.com/Norheem/grocery_shopping_app/assets/54234007/9be5397a-a67e-4c56-a67a-5bd43085b5d4)
 ![2024-07-07 02-49-55 High Res Screenshot](https://github.com/Norheem/grocery_shopping_app/assets/54234007/fee9dc2e-55b6-4e65-84e5-940c9b9a58f2)

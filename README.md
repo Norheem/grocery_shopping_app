@@ -18,7 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 
 [Shopping app using API to fetch data from] (https://api.timbu.cloud/)
 
-[You can check the app here by clicking on the link provided here] (https://appetize.io/app/b_kjoml33hqcbxmuhg3crjepkyiu)
+[You can check the app here by clicking on the link provided here] (https://appetize.io/app/b_wxh7ozjqwffroztl7s66nmjrya)
 
 [Provided is the link to download the APK file of the app] (https://www.mediafire.com/file/l0xhxqf2wxplv9h/app-debug.apk/file)
 
